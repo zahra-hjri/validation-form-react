@@ -10,47 +10,85 @@ export const Form = () => {
   const [ values , setValuse ] = useState({
     userName:"",
     phoneNumber:"",
+    mobileNumber:"",
     password:"",
     confirmPassword:"",
     emailAddress:"",
     checkRull: false,
   })
 
+  const [error , setError] = useState({})
+  const [generatePassword,setGeneratePassword] = useState("")
+  const [success , setSuccess] = useState(false)
   const onChangeHandle = (e)=>{
     setValuse({ ...values , [e.target.name]: e.target.value})
   }
 
   const onSubmitHandle = (e) =>{
     e.preventDefault();
-    Validate(values);
-    // console.log(values)
-    
+    const err = Validate(values);
+    setError(err)
 
+    console.log(Object.keys(err).length)
+    setSuccess(Object.keys(err).length === 0 && true)
   }
-
+  function handleGeneratePassword() {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    let password = '';
+  
+    while (!/(?=.*[A-Za-z])(?=.*\d).{6,}/.test(password)) {
+      password = '';
+      for (let i = 0; i < 6; i++) {
+        const charSet = i % 2 === 0 ? alphabet : numbers;
+        const randomIndex = Math.floor(Math.random() * charSet.length);
+        password += charSet[randomIndex];
+      }
+    }
+  
+    return setGeneratePassword(password);
+  }
   return (
     <div>
-        <form onSubmit={onSubmitHandle} className='p-2 rounded-3xl h-full bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 w-11/12 sm:w-4/5 lg:w-8/12 xl:w-7/12 mx-auto py-5 sm:py-10 shadow-2xl'>
+
+        <form onSubmit={onSubmitHandle} className='p-2 rounded-3xl h-full bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 w-11/12 sm:w-4/5 lg:w-7/12 xl:w-6/12 mx-auto py-5 sm:py-10 shadow-2xl'>
+            {/* <p className=' text-red-500 font-medium block ml-6'>{error.empty}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.username}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.confirmpassword}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.checkrull}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.hardpassword}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.email}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.mobile}</p>
+              <p className=' text-red-500 font-medium ml-6'>{error.phone}</p> */}
+
+              {Object.values(error).map((error) =>(
+                <p key={error} className='text-red-500 font-medium ml-6'>{error}</p>
+              ))}
+              {
+                 success && <p className='font-bold rounded-xl w-64 ml-4 text-green-500 mx-auto text-center'>Registration was successful</p>
+              }
             <div className='flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:mx-auto'>
             
             <input name='userName' value={values.userName} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder="Username"/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder="Username"/>
            
             <input name='phoneNumber' value={values.phoneNumber} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4  shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Phone number'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4  shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Phone number'/>
             
             <input name='password' value={values.password} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Password'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Password'/>
             
             <input name='confirmPassword' value={values.confirmPassword} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Confirm Password'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Confirm Password'/>
+            
             
             <input name='emailAddress' value={values.emailAddress} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Email Address'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Email Address'/>
             
-            <input onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-72 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='Femail'/>
-
+            <input name='mobileNumber' value={values.mobileNumber} onChange={onChangeHandle} 
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
+            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-xl sm:ml-3 mt-4 bg-blue-900 text-white'>Generate hard password</button>
+            <p className='text-blue-700 font-bold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 rounded-xl'>{generatePassword}</p>
            
             </div>
             <div className="flex items-center ml-5 mt-8">
@@ -60,6 +98,8 @@ export const Form = () => {
               className="ml-2 text-sm font-medium text-gray-800">I accept the rules</label>
             </div>
             <button type='submit' className='font-bold rounded-full w-60 bg-gradient-to-r from-blue-500 to-green-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
+        
+        
         </form>
     </div>
   )
