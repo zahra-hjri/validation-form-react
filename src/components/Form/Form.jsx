@@ -97,7 +97,7 @@ export const Form = () => {
               <label 
               className="ml-2 text-sm font-medium text-gray-800">I accept the rules</label>
             </div>
-            <button type='submit' className='font-bold rounded-full w-60 bg-gradient-to-r from-blue-500 to-green-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
+            <button type='submit' className='font-bold rounded-full w-64 bg-gradient-to-r from-blue-500 to-green-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
         
         
         </form>
