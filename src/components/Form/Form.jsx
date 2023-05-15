@@ -62,10 +62,10 @@ export const Form = () => {
               <p className=' text-red-500 font-medium ml-6'>{error.phone}</p> */}
 
               {Object.values(error).map((error) =>(
-                <p key={error} className='text-red-500 font-medium ml-6'>{error}</p>
+                <p key={error} className='text-red-700 font-medium ml-6'>{error}</p>
               ))}
               {
-                 success && <p className='font-bold rounded-xl w-64 ml-4 text-green-500 mx-auto text-center'>Registration was successful</p>
+                 success && <p className='font-bold rounded-xl w-64 ml-4 text-green-800 mx-auto text-center'>Registration was successful</p>
               }
             <div className='flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:mx-auto'>
             
@@ -87,8 +87,8 @@ export const Form = () => {
             
             <input name='mobileNumber' value={values.mobileNumber} onChange={onChangeHandle} 
             className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
-            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-xl sm:ml-3 mt-4 bg-blue-900 text-white'>Generate hard password</button>
-            <p className='text-blue-700 font-bold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 rounded-xl'>{generatePassword}</p>
+            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-blue-700 text-white font-medium hover:bg-blue-900'>Generate hard password</button>
+            <p className='text-blue-700 font-bold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
            
             </div>
             <div className="flex items-center ml-5 mt-8">
