@@ -74,7 +74,7 @@ export const Form = () => {
                 <p key={error} className='text-red-500 font-medium ml-6'>{error}</p>
               ))}
               {
-                 success && <p className='font-bold rounded-xl w-64 pb-4 text-green-700 mx-auto text-center'>Registration was successful</p>
+                 success && <p className='font-bold rounded-xl w-64 pb-4 text-green-500 mx-auto text-center'>Registration was successful</p>
               }
             <div className='flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:mx-auto'>
             
@@ -96,7 +96,7 @@ export const Form = () => {
             
             <input name='mobileNumber' value={values.mobileNumber} onChange={onChangeHandle} 
             className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
-            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-slate-500 text-white font-medium hover:bg-slate-600'>Generate hard password</button>
+            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-pink-700 text-white font-medium hover:bg-pink-800'>Generate hard password</button>
             <p className='text-slate-600 font-bold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
            
             </div>
@@ -106,7 +106,7 @@ export const Form = () => {
               <label 
               className="ml-2 text-sm font-medium text-gray-800">I accept the rules</label>
             </div>
-            <button type='submit' className='font-bold rounded-full w-64 bg-gradient-to-r from-slate-300 to-green-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
+            <button type='submit' className='font-bold rounded-full w-64 bg-gradient-to-r from-pink-600 to-slate-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
         
         
         </form>
