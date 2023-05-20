@@ -1,14 +1,11 @@
 
-
-import { useState } from 'react';
-
 import { Form } from './components/Form/Form';
 import './App.css'
 
 function App() {
 
   return (
-    <div className=' h-full w-full bg-gradient-to-r from-pink-700 to-slate-500 px-5 pb-20'>
+    <div className=' h-full w-full bg-gradient-to-r from-green-950 to-slate-200 px-5 pb-20'>
      
       <h1 className='text-white font-extrabold text-center text-xl sm:text-3xl py-10'>Registration Form
       </h1>
