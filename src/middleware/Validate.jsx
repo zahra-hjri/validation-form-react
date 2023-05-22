@@ -10,14 +10,11 @@ export const Validate = (values) => {
     checkRull,
   } = values;
 
-  const regexPassWord =
-    // /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
-    /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
-
+  const regexPassWord =/^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
   const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const regexMobile = /^(\+98 | 0)9[0-9]{9}$/;
-
   const regexPhone = /^0[0-9]{2,}[0-9]{7,}$/;
+  
   if (
     (!userName || !phoneNumber,
     !password || !confirmPassword,

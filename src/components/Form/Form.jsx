@@ -60,7 +60,7 @@ export const Form = () => {
   return (
     <div>
 
-        <form onSubmit={onSubmitHandle} className='p-2 rounded-3xl h-full bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 w-11/12 sm:w-4/5 lg:w-7/12 xl:w-6/12 mx-auto py-5 sm:py-10 shadow-2xl'>
+        <form onSubmit={onSubmitHandle} className='p-2 rounded-3xl h-full bg-gray-200 bg-opacity-5 border border-gray-100 w-11/12 sm:w-4/5 lg:w-7/12 xl:w-6/12 mx-auto py-5 sm:py-10 shadow-xl'>
             {/* <p className=' text-red-500 font-medium block ml-6'>{error.empty}</p>
               <p className=' text-red-500 font-medium ml-6'>{error.username}</p>
               <p className=' text-red-500 font-medium ml-6'>{error.confirmpassword}</p>
@@ -71,7 +71,7 @@ export const Form = () => {
               <p className=' text-red-500 font-medium ml-6'>{error.phone}</p> */}
 
               {Object.values(error).map((error) =>(
-                <p key={error} className='text-red-500 font-medium ml-6'>{error}</p>
+                <p key={error} className='text-rose-700 font-medium ml-6'>{error}</p>
               ))}
               {
                  success && <p className='font-bold rounded-xl w-64 pb-4 text-green-500 mx-auto text-center'>Registration was successful</p>
@@ -96,17 +96,17 @@ export const Form = () => {
             
             <input name='mobileNumber' value={values.mobileNumber} onChange={onChangeHandle} 
             className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-slate-300 rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
-            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-green-950 text-white font-medium hover:bg-green-800'>Generate hard password</button>
-            <p className='text-gray-800 font-bold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
+            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-rose-500 text-white font-medium hover:bg-green-700'>Generate hard password</button>
+            <p className='text-green-800 font-extrabold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
            
             </div>
             <div className="flex items-center ml-5 mt-8">
               <input name='checkRull' checked={values.checkRull} onChange={onChangeHandle} type="checkbox" 
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
               <label 
               className="ml-2 text-sm font-medium text-gray-800">I accept the rules</label>
             </div>
-            <button type='submit' className='font-bold rounded-full w-64 bg-gradient-to-r from-slate-200 to-green-950 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
+            <button type='submit' className='font-bold rounded-full w-64 bg-gradient-to-r from-green-700 to-rose-500 text-white text-center p-3 md:w-6/12 mx-auto block my-12 shadow-xl' >Login</button>
         
         
         </form>
