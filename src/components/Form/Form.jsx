@@ -79,25 +79,25 @@ export const Form = () => {
             <div className='flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:mx-auto'>
             
             <input name='userName' value={values.userName} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder="Username"/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder="Username"/>
            
             <input name='phoneNumber' value={values.phoneNumber} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4  shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder='Phone number'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4  shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder='Phone number'/>
             
             <input name='password' value={values.password} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder='Password'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder='Password'/>
             
             <input name='confirmPassword' value={values.confirmPassword} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder='Confirm Password'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder='Confirm Password'/>
             
             
             <input name='emailAddress' value={values.emailAddress} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder='Email Address'/>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder='Email Address'/>
             
             <input name='mobileNumber' value={values.mobileNumber} onChange={onChangeHandle} 
-            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-teal-100 rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
-            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-blue-200 text-blue-400 font-medium hover:bg-blue-300 hover:text-white'>Generate hard password</button>
-            <p className='text-blue-400 font-extrabold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
+            className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 shadow-xl bg-white rounded-2xl outline-none placeholder:text-sm' placeholder='+98 **********'/>
+            <button onClick={handleGeneratePassword} type='button' className='p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 rounded-full  sm:ml-3 mt-4 bg-zinc-400 text-white font-medium hover:bg-zinc-600 hover:text-white'>Generate hard password</button>
+            <p className='text-zinc-500 font-extrabold p-2 md:p-3 w-60 sm:w-96 md:w-60 lg:w-64 sm:ml-3 mt-4 '>{generatePassword}</p>
            
             </div>
             <div className="flex items-center ml-5 mt-8">
